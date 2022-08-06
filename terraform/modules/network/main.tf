@@ -35,7 +35,7 @@ resource "aws_egress_only_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = "egress-only-internet-gateway-${var.region}"
+    Name = "egress-only-internet-gateway-${var.region}${var.suffix}"
   }
 }
 
@@ -61,6 +61,6 @@ resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = "internet-gateway-${var.region}"
+    Name = "internet-gateway-${var.region}${var.suffix}"
   }
 }
